@@ -12,14 +12,14 @@ function sum_to_n_a(n: number): number {
 
 /** Complexity O(n) */
 function sum_to_n_b(n: number): number {
-  const sum_recursive = (n: number): number => {
+  const sum_recursive = (n: number, total: number): number => {
     if (n <= 1) {
       return 1
     }
-    return n + sum_recursive(n - 1)
+    return sum_recursive(n - 1, total + n)
   } 
 
-  return n <= 0 ? 0 : sum_recursive(n)
+  return n <= 0 ? 0 : sum_recursive(n, 0)
 }
 
 /** Complexity O(0) */

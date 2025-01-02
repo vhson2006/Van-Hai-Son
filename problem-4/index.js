@@ -1,4 +1,5 @@
 "use strict";
+/** Complexity O(n) */
 function sum_to_n_a(n) {
     if (n <= 0) {
         return 0;
@@ -9,21 +10,17 @@ function sum_to_n_a(n) {
     }
     return sum;
 }
+/** Complexity O(n) */
 function sum_to_n_b(n) {
-    const sum_recursive = (n) => {
+    const sum_recursive = (n, total) => {
         if (n <= 1) {
             return 1;
         }
-        return n + sum_recursive(n - 1);
+        return sum_recursive(n - 1, total + n);
     };
-    return n <= 0 ? 0 : sum_recursive(n);
+    return n <= 0 ? 0 : sum_recursive(n, 0);
 }
+/** Complexity O(0) */
 function sum_to_n_c(n) {
     return n <= 0 ? 0 : n * (n + 1) / 2;
-}
-const def = [2, 99];
-for (let i in def) {
-    console.log(sum_to_n_a(def[i]));
-    console.log(sum_to_n_b(def[i]));
-    console.log(sum_to_n_c(def[i]));
 }
