@@ -16,7 +16,7 @@ $ npm run typeorm:run
 $ npm start
 ```
 
-Visit to localhost:3000/user to check API, the Methods is: GET, POST, PATH, DELETE
+Visit to localhost:3000/user to check API, the Methods is: GET, POST, PATCH, DELETE
 
 ## Others
 
