@@ -1,0 +1,19 @@
+version: "3.7"
+services:
+  postgres:
+    container_name: 99tech
+    image: postgres
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - pgdta:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+volumes:
+  pgdta:
+    driver: local
+networks:
+  host_bridge:
+    driver: bridge
